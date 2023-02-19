@@ -1,6 +1,8 @@
 
 ### freeloop
+```
 *freeloop({<toggle>})
+```
 
 Toggling this to enabled (1) allows the script instance to bypass the infinite loop
 protection, allowing your script to loop as much as it may need. Disabling (0) will
@@ -10,6 +12,7 @@ The command will return the state of freeloop for the attached script, even if n
 argument is provided.
 
 Example:
+```
 	freeloop(1); // enable script to loop freely
 
 	// be careful with what you do here
@@ -25,3 +28,4 @@ Example:
 		dothis;
 		// throw an infinity loop error
 	}
+```

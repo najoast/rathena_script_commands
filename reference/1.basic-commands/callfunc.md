@@ -1,7 +1,9 @@
 
 ### callfunc
+```
 *callfunc "<function>"{,<argument>,...<argument>};
 *callfunc("<function>"{,<argument>,...<argument>})
+```
 
 This command lets you call up a function NPC. A function NPC can be called from
 any script on any map server. Using the 'return' command it will come back to
@@ -66,6 +68,8 @@ may be called directly without the use of the 'callfunc' script command.
 
 Note:
 
+```
  !! A user-defined function must be declared /before/ a script attempts to
  !! call it. That is to say, any functions should be placed above scripts or NPCs
  !! (or loaded in a separate file first) before attempting to call them directly.
+```

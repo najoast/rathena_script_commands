@@ -1,6 +1,8 @@
 
 ### for
+```
 *for (<variable initialization>; <condition>; <variable update>) <statement>;
+```
 
 Another pretest looping structure is the 'for' statement. It is considered a
 specialized form of the 'while' statement, and is usually associated with counter-
@@ -12,10 +14,14 @@ update statement is executed (this usually involves incrementing a variable).
 Then the condition is reevaluated and the cycle continues.
 
 Example 1:
+```
 	for( .@i = 1; .@i <= 5; .@i++ )
 		mes "This line will print 5 times.";
+```
 
 Example 2:
+```
 	mes "This will print the numbers 1 - 5.";
 	for( .@i = 1; .@i <= 5; .@i++ )
 		mes "Number: " + .@i;
+```

@@ -1,5 +1,7 @@
 ### clear
+```
 *clear;
+```
 
 This command will clear the dialog text and continue the script without player interaction.
 

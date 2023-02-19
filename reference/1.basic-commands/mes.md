@@ -1,5 +1,7 @@
 ### mes
+```
 *mes "<string>"{,"<string>"{,...}};
+```
 
 This command will display a box on the screen for the invoking character, if no
 such box is displayed already, and will print the string specified into that

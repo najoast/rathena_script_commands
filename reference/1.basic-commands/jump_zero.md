@@ -1,5 +1,7 @@
-### jump_zero
+# jump_zero
+```
 *jump_zero (<condition>),<label>;
+```
 
 This command works kinda like an 'if'+'goto' combination in one go. (See 'if').
 If the condition is false (equal to zero) this command will immediately jump to

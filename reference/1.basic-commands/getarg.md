@@ -1,6 +1,8 @@
 
 ### getarg
+```
 *getarg(<index>{,<default_value>})
+```
 
 This function is used when you use the 'callsub' or 'callfunc' commands. In the
 call you can specify variables that will make that call different from another
@@ -44,13 +46,15 @@ calling the function, so the random number could be 0, 1, 2, 3 or 4, this makes
 
 You can pass multiple arguments in a function call:
 
+```
 	callfunc "funcNPC",5,4,3;
+```
 
 getarg(0) would be 5, getarg(1) would be 4 and getarg(2) would be 3.
 
 'getarg' has an optional argument since trunk r10773 and stable r10958.
 If the target argument exists, it is returned.
-Otherwise, if <default_value> is present it is returned instead,
+Otherwise, if `<default_value>` is present it is returned instead,
 if not the script terminates immediately.
 
 In the previous example getarg(2,-1) would be 3 and getarg(3,-1) would be -1.

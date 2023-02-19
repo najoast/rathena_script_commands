@@ -1,9 +1,11 @@
 ### countinarray
+```
 *countinarray <array name>{[<start index>]},<array name>{[<start index>]};
+```
 
 This command will check for matches between the array values and return the number of matches.
-While being optional, if [<start index>] is supplied, the search will begin from the given index value.
-
+While being optional, if `[<start index>]` is supplied, the search will begin from the given index value.
+```
 	setarray .@array[0], 100, 200, 300, 400, 500, 600;
 	
 	.@variable = 100;
@@ -25,5 +27,6 @@ While being optional, if [<start index>] is supplied, the search will begin from
 	//also you can change the position between the arrays in the command
 	if(countinarray(.@array[0], .@array3[0]) == countinarray(.@array3[0], .@array[0]))
 		//This is true
+```
 
 For more details, see the sample in 'doc/sample/inarray.txt'.

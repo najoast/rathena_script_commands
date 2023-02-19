@@ -1,5 +1,7 @@
 ### menu
+```
 *menu "<option_text>",<target_label>{,"<option_text>",<target_label>,...};
+```
 
 This command will create a selectable menu for the invoking character. Only one
 menu can be on screen at the same time.
@@ -10,37 +12,43 @@ string)
 
 Options can be grouped together, separated by the character ':'.
 
-	menu "A:B",L_Wrong,"C",L_Right;
+```
+menu "A:B",L_Wrong,"C",L_Right;
+```
 
 It also sets a special temporary character variable @menu, which contains the
 number of option the player picked. (Numbering of options starts at 1.)
 This number is consistent with empty options and grouped options.
 
-	menu "A::B",L_Wrong,"",L_Impossible,"C",L_Right;
+```
+menu "A::B",L_Wrong,"",L_Impossible,"C",L_Right;
 
-	L_Wrong:
-		// If they click "A" or "B" they will end up here
-		// @menu == 1 if "A"
-		// @menu == 2 will never happen because the option is empty
-		// @menu == 3 if "B"
-	L_Impossible:
-		// Empty options are not displayed and therefore can't be selected
-		// this label will never be reached from the menu command
-	L_Right:
-		// If they click "C" they will end up here
-		// @menu == 5
+L_Wrong:
+	// If they click "A" or "B" they will end up here
+	// @menu == 1 if "A"
+	// @menu == 2 will never happen because the option is empty
+	// @menu == 3 if "B"
+L_Impossible:
+	// Empty options are not displayed and therefore can't be selected
+	// this label will never be reached from the menu command
+L_Right:
+	// If they click "C" they will end up here
+	// @menu == 5
+```
 
 If a label is '-', the script execution will continue right after the menu
 command if that option is selected, this can be used to save you time, and
 optimize big scripts.
 
-	menu "A::B:",-,"C",L_Right;
-		// If they click "A" or "B" they will end up here
-		// @menu == 1 if "A"
-		// @menu == 3 if "B"
-	L_Right:
-		// If they click "C" they will end up here
-		// @menu == 5
+```
+menu "A::B:",-,"C",L_Right;
+	// If they click "A" or "B" they will end up here
+	// @menu == 1 if "A"
+	// @menu == 3 if "B"
+L_Right:
+	// If they click "C" they will end up here
+	// @menu == 5
+```
 
 Both these examples will perform the exact same task.
 
@@ -57,35 +65,35 @@ with the strings that should go into the menu at this execution, making sure not
 to leave any gaps. Normally, you do it with a loop and an extra counter, like
 this:
 ```
-	setarray .@possiblemenuitems$[0],<list of potential menu items>;
-	.@j = 0; // That's the menu lines counter.
+setarray .@possiblemenuitems$[0],<list of potential menu items>;
+.@j = 0; // That's the menu lines counter.
 
-	// We loop through the list of possible menu items.
-	// .@i is our loop counter.
-	for( .@i = 0; .@i < getarraysize(.@possiblemenuitems$); .@i++ )
+// We loop through the list of possible menu items.
+// .@i is our loop counter.
+for( .@i = 0; .@i < getarraysize(.@possiblemenuitems$); .@i++ )
+{
+	// That 'condition' is whatever condition that determines whether
+	// a menu item number .@i actually goes into the menu or not.
+
+	if (<condition>)
 	{
-		// That 'condition' is whatever condition that determines whether
-		// a menu item number .@i actually goes into the menu or not.
+		// We record the option into the list of options actually available.
 
-		if (<condition>)
-		{
-			// We record the option into the list of options actually available.
+		.@menulist$[@j] = .@possiblemenuitems$[@i];
 
-			.@menulist$[@j] = .@possiblemenuitems$[@i];
+		// We just copied the string, we do need its number for later
+		// though, so we record it as well.
 
-			// We just copied the string, we do need its number for later
-			// though, so we record it as well.
+		.@menureference[@j] = .@i;
 
-			.@menureference[@j] = .@i;
+		// Since we've just added a menu item into the list, we increment
+		// the menu lines counter.
 
-			// Since we've just added a menu item into the list, we increment
-			// the menu lines counter.
-
-			.@j++;
-		}
-
-		// We go on to the next possible menu item.
+		.@j++;
 	}
+
+	// We go on to the next possible menu item.
+}
 ```
 
 This will create you an array .@menulist$ which contains the text of all items
@@ -96,8 +104,10 @@ items you've defined, but the menu command can handle the empty lines - only if
 they are last in the list, and if it's made this way, they are. Now comes a
 dirty trick:
 
-	// X is whatever the most menu items you expect to handle.
-	menu .@menulist$[0],-,.@menulist$[1],-,...,.@menulist$[<X>],-;
+```
+// X is whatever the most menu items you expect to handle.
+menu .@menulist$[0],-,.@menulist$[1],-,...,.@menulist$[<X>],-;
+```
 
 This calls up a menu of all your items. Since you didn't copy some of the
 possible menu items into the list, its end is empty and so no menu items will
@@ -112,11 +122,14 @@ But how do you figure out which option the user picked? Enter the @menu.
 starting with 1 for the first option. You know now which option the user picked
 and which number in your real list of possible menu items it translated to:
 
-    mes "You selected " + .@possiblemenuitems$[.@menureference[@menu-1]] + "!";
+```
+mes "You selected " + .@possiblemenuitems$[.@menureference[@menu-1]] + "!";
+```
 
 @menu is the number of option the user picked.
 @menu-1 is the array index for the list of actually used menu items that we
 made.
+
 .@menureference[@menu-1] is the number of the item in the array of possible menu
 items that we've saved just for this purpose.
 

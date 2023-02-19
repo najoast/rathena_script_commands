@@ -1,7 +1,9 @@
 
 ### callsub
+```
 *callsub <label>{,<argument>,...<argument>};
 *callsub(<label>{,<argument>,...<argument>})
+```
 
 This command will go to a specified label within the current script (do NOT use
 quotes around it) coming in as if it were a 'callfunc' call, and pass it

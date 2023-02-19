@@ -14,6 +14,7 @@ Note that the name may only contain alphanumeric characters and underscore.
 
 Usage:
 
+```
     1. Declare the function.
 	function <function name>;
     2. Call the function anywhere within the script.
@@ -21,6 +22,7 @@ Usage:
 	<function name>;
     3. Define the function within the script.
 	<function name> {<code>}
+```
 
 Example:
 ```
