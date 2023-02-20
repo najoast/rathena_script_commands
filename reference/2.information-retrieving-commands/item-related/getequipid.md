@@ -9,7 +9,7 @@ on the invoking character or the specified equipment slot. If nothing is
 equipped there, it returns -1.
 Valid equipment slots are:
 
-```c
+```
 EQI_COMPOUND_ON (-1)      - Item slot that calls this script (In context of item script)
 EQI_ACC_L (0)             - Accessory 1
 EQI_ACC_R (1)             - Accessory 2

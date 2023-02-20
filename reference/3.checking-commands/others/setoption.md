@@ -1,0 +1,1 @@
+see [checkoption](reference/3.checking-commands/checkoption.md)
