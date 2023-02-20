@@ -1,5 +1,5 @@
 ### menu
-```
+```c
 *menu "<option_text>",<target_label>{,"<option_text>",<target_label>,...};
 ```
 
@@ -12,7 +12,7 @@ string)
 
 Options can be grouped together, separated by the character ':'.
 
-```
+```c
 menu "A:B",L_Wrong,"C",L_Right;
 ```
 
@@ -20,7 +20,7 @@ It also sets a special temporary character variable @menu, which contains the
 number of option the player picked. (Numbering of options starts at 1.)
 This number is consistent with empty options and grouped options.
 
-```
+```c
 menu "A::B",L_Wrong,"",L_Impossible,"C",L_Right;
 
 L_Wrong:
@@ -40,7 +40,7 @@ If a label is '-', the script execution will continue right after the menu
 command if that option is selected, this can be used to save you time, and
 optimize big scripts.
 
-```
+```c
 menu "A::B:",-,"C",L_Right;
 	// If they click "A" or "B" they will end up here
 	// @menu == 1 if "A"
@@ -64,7 +64,7 @@ Create a temporary array of strings to contain your menu items, and populate it
 with the strings that should go into the menu at this execution, making sure not
 to leave any gaps. Normally, you do it with a loop and an extra counter, like
 this:
-```
+```c
 setarray .@possiblemenuitems$[0],<list of potential menu items>;
 .@j = 0; // That's the menu lines counter.
 
@@ -104,7 +104,7 @@ items you've defined, but the menu command can handle the empty lines - only if
 they are last in the list, and if it's made this way, they are. Now comes a
 dirty trick:
 
-```
+```c
 // X is whatever the most menu items you expect to handle.
 menu .@menulist$[0],-,.@menulist$[1],-,...,.@menulist$[<X>],-;
 ```
@@ -122,7 +122,7 @@ But how do you figure out which option the user picked? Enter the @menu.
 starting with 1 for the first option. You know now which option the user picked
 and which number in your real list of possible menu items it translated to:
 
-```
+```c
 mes "You selected " + .@possiblemenuitems$[.@menureference[@menu-1]] + "!";
 ```
 
@@ -148,7 +148,9 @@ probably since that wasn't documented anywhere.
 See also 'select', which is probably better in this particular case. Instead of
 menu, you could use 'select' like this:
 
-    .@dummy = select(.@menulist$[0],.@menulist$[1],...,.@menulist$[<X>]);
+```c
+.@dummy = select(.@menulist$[0],.@menulist$[1],...,.@menulist$[<X>]);
+```
 
 For the purposes of the technique described above these two statements are
 perfectly equivalent.

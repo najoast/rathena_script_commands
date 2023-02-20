@@ -1,5 +1,5 @@
 # jump_zero
-```
+```c
 *jump_zero (<condition>),<label>;
 ```
 
