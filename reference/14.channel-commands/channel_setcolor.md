@@ -4,6 +4,6 @@
 ```
 
 To change channel color.
-<color> uses hex RGB values.
+`<color>` uses hex RGB values.
 
 Returns 1 on success.

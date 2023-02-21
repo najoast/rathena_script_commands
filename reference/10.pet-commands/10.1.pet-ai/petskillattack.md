@@ -2,17 +2,11 @@
 ### petskillattack
 ```
 *petskillattack <skill id>,<skill level>,<rate>,<bonusrate>;
-```
-### petskillattack
-```
 *petskillattack "<skill name>",<skill level>,<rate>,<bonusrate>;
 ```
 ### petskillattack2
 ```
 *petskillattack2 <skill id>,<damage>,<number of attacks>,<rate>,<bonusrate>;
-```
-### petskillattack2
-```
 *petskillattack2 "<skill name>",<damage>,<number of attacks>,<rate>,<bonusrate>;
 ```
 

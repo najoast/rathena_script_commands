@@ -7,7 +7,7 @@ This command will change the allegiance if a monster in a battle ground.
 GID can be set when spawning the monster via the 'bg_monster' command.
 
 Example:
-
+```c
 	end;
 
 OnEnable:
@@ -21,3 +21,4 @@ OnTimer1000:
 	mapannounce "Erm, sorry about that! This monster was meant for Battle Group 1.",bc_map,"0xFFCE00";
 	bg_monster_set_team $@Guardian, $@BG_1;
 	end;
+```

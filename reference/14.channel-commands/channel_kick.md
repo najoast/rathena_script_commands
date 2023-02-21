@@ -2,9 +2,6 @@
 ### channel_kick
 ```
 *channel_kick "<chname>",<char_id>;
-```
-### channel_kick
-```
 *channel_kick "<chname>","<char_name>";
 ```
 

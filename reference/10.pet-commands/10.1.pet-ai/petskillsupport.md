@@ -1,9 +1,6 @@
 ### petskillsupport
 ```
 *petskillsupport <skill id>,<skill level>,<delay>,<percent hp>,<percent sp>;
-```
-### petskillsupport
-```
 *petskillsupport "<skill name>",<skill level>,<delay>,<percent hp>,<percent sp>;
 ```
 

@@ -12,6 +12,7 @@ else.
 
 Upon executing this,
 
+```
 $@partymembername$[] is a global temporary string array which contains all the
                      names of these party members
                      (only set when type is 0 or not specified)
@@ -25,6 +26,7 @@ $@partymemberaid[]   is a global temporary number array which contains the
                      (only set when type is 2)
 
 $@partymembercount   is the number of party members that were found.
+```
 
 The party members will (apparently) be found regardless of whether they are
 online or offline. Note that the names come in no particular order.
@@ -43,74 +45,75 @@ If 'array_variable' is set, the result will be stored to that variable instead
 using global variable.
 
 Example 1: list party member names
+```c
+// get the party member names
+getpartymember getcharid(1),0;
 
-	// get the party member names
-	getpartymember getcharid(1),0;
+// It's a good idea to copy the global temporary $@partymember*****
+// variables to your own scope variables because if you have pauses in this
+// script (sleep, sleep2, next, close2, input, menu, select, or prompt),
+// another player could click this NPC, trigger 'getpartymember', and
+// overwrite the $@partymember***** variables.
+.@count = $@partymembercount;
+copyarray .@name$[0], $@partymembername$[0], $@partymembercount;
 
-	// It's a good idea to copy the global temporary $@partymember*****
-	// variables to your own scope variables because if you have pauses in this
-	// script (sleep, sleep2, next, close2, input, menu, select, or prompt),
-	// another player could click this NPC, trigger 'getpartymember', and
-	// overwrite the $@partymember***** variables.
-	.@count = $@partymembercount;
-	copyarray .@name$[0], $@partymembername$[0], $@partymembercount;
-
-	// list the party member names
-	for (.@i = 0; .@i < .@count; .@i++)
-		mes (.@i +1) + ". ^0000FF" + .@name$[.@i] + "^000000";
-	close;
-
+// list the party member names
+for (.@i = 0; .@i < .@count; .@i++)
+	mes (.@i +1) + ". ^0000FF" + .@name$[.@i] + "^000000";
+close;
+```
 
 Example 2: check party count (with a 'next' pause), before warping to event
+```c
+.register_num = 5; // How many party members are required?
 
-	.register_num = 5; // How many party members are required?
+// get the charID and accountID of character's party members
+getpartymember getcharid(1), 1;
+getpartymember getcharid(1), 2;
 
-	// get the charID and accountID of character's party members
-	getpartymember getcharid(1), 1;
-	getpartymember getcharid(1), 2;
+if ( $@partymembercount != .register_num ) {
+	mes "Please form a party of " + .register_num + " to continue";
+	close;
+}
 
-	if ( $@partymembercount != .register_num ) {
-		mes "Please form a party of " + .register_num + " to continue";
-		close;
-	}
+// loop through both and use 'isloggedin' to count online party members
+for ( .@i = 0; .@i < $@partymembercount; .@i++ )
+	if ( isloggedin( $@partymemberaid[.@i], $@partymembercid[.@i] ) )
+		.@count_online++;
 
-	// loop through both and use 'isloggedin' to count online party members
-	for ( .@i = 0; .@i < $@partymembercount; .@i++ )
-		if ( isloggedin( $@partymemberaid[.@i], $@partymembercid[.@i] ) )
-			.@count_online++;
+// We search accountID & charID because a single party can have multiple
+// characters from the same account. Without searching through the charID,
+// if a player has 2 characters from the same account inside the party but
+// only 1 char online, it would count their online char twice.
 
-	// We search accountID & charID because a single party can have multiple
-	// characters from the same account. Without searching through the charID,
-	// if a player has 2 characters from the same account inside the party but
-	// only 1 char online, it would count their online char twice.
+if ( .@count_online != .register_num ) {
+	mes "All your party members must be online to continue";
+	close;
+}
 
-	if ( .@count_online != .register_num ) {
-		mes "All your party members must be online to continue";
-		close;
-	}
+// copy the array to prevent players cheating the system
+copyarray .@partymembercid, $@partymembercid, .register_num;
 
-	// copy the array to prevent players cheating the system
-	copyarray .@partymembercid, $@partymembercid, .register_num;
+mes "Are you ready ?";
+next; // careful here
+select("Yes");
 
-	mes "Are you ready ?";
-	next; // careful here
-	select("Yes");
+// When a script hits a next, menu, sleep or input that pauses the script,
+// players can invite or /leave and make changes in their party. To prevent
+// this, we call getpartymember again and compare with the original values.
 
-	// When a script hits a next, menu, sleep or input that pauses the script,
-	// players can invite or /leave and make changes in their party. To prevent
-	// this, we call getpartymember again and compare with the original values.
-
-	getpartymember getcharid(1), 1;
-	if ( $@partymembercount != .register_num ) {
+getpartymember getcharid(1), 1;
+if ( $@partymembercount != .register_num ) {
+	mes "You've made changes to your party !";
+	close;
+}
+for ( .@i = 0; .@i < $@partymembercount; .@i++ ) {
+	if ( .@partymembercid[.@i] != $@partymembercid[.@i] ) {
 		mes "You've made changes to your party !";
 		close;
 	}
-	for ( .@i = 0; .@i < $@partymembercount; .@i++ ) {
-		if ( .@partymembercid[.@i] != $@partymembercid[.@i] ) {
-			mes "You've made changes to your party !";
-			close;
-		}
-	}
+}
 
-	// Finally, it's safe to start the event!
-	warpparty "event_map", 0,0, getcharid(1);
+// Finally, it's safe to start the event!
+warpparty "event_map", 0,0, getcharid(1);
+```
