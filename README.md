@@ -1,6 +1,6 @@
 The script_commands.txt of rAthena is well written, but its format is not markdown, and the readability is not so good. And all the information is concentrated in one file, which is inconvenient to consult.
 
-This warehouse splits all functions into independent files, and adds a function index on the home page for easy query.
+This repo splits all functions into independent files, and adds a function index on the home page for easy query.
 
 # Manual
 1. [Introduction](manual/1.introduction.md)
