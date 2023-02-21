@@ -8,7 +8,7 @@ invoking character, to allow entering of a number or a string. This has many
 uses, one example would be a guessing game, also making use of the 'rand'
 function:
 
-```
+```c
 mes "[Woman]";
 mes "Try and guess the number I am thinking of.";
 mes "The number will be between 1 and 10.";
@@ -29,7 +29,7 @@ if (.@guess == .@number) {
 If you give the input command a string variable to put the input in, it will
 allow the player to enter text. Otherwise, only numbers will be allowed.
 
-```
+```c
 mes "[Woman]";
 mes "Please say HELLO";
 next;

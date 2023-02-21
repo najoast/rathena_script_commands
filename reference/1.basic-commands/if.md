@@ -14,7 +14,7 @@ resulting in a zero are false.
 If the expression results in True, the statement will be executed. If it isn't
 true, nothing happens and we move on to the next line of the script.
 
-```
+```c
 if (1)  mes "This will always print.";
 if (0)  mes "And this will never print.";
 if (5)  mes "This will also always print.";
@@ -25,14 +25,14 @@ For more information on conditional operators see the operators section above.
 Anything that is returned by a function can be used in a condition check without
 bothering to store it in a specific variable:
 
-```
+```c
 if (strcharinfo(0) == "Daniel Jackson") mes "It is true, you are Daniel!";
 ```
 
 More examples of using the 'if' command in the real world:
 
 ## Example 1:
-```
+```c
 .@answer = 1;
 input .@input;
 if (.@input == .@answer)
@@ -42,7 +42,7 @@ close;
 ```
 
 ## Example 2:
-```
+```c
 .@answer = 1;
 input .@input;
 if (.@input != .@answer)
@@ -52,7 +52,7 @@ close;
 Notice that examples 1 and 2 have the same effect.
 
 ## Example 3:
-```
+```c
 .@count++;
 mes "[Forgetful Man]";
 if (.@count == 1) mes "This is the first time you have talked to me.";
@@ -67,7 +67,7 @@ close;
 ```
 
 ## Example 4:
-```
+```c
 mes "[Quest Person]";
 if (countitem(512) < 1) {  // 512 is the item ID for Apple, found in item_db
 	mes "Can you please bring me an apple?";
@@ -79,7 +79,7 @@ close;
 ```
 
 ## Example 5:
-```
+```c
 mes "[Person Checker]";
 if ($@name$ == "") {  // global variable not yet set
 	mes "Please tell me someones name";
@@ -106,7 +106,7 @@ close;
 See 'strcharinfo' for an explanation of what this function does.
 
 ## Example 6: Using complex conditions.
-```
+```c
 mes "[Multiple Checks]";
 if (@queststarted == 1 && countitem(512) >= 5) {
 	mes "Well done, you have started the quest and brought me 5 Apples.";
@@ -120,7 +120,7 @@ close;
 ```
 
 The script engine also supports nested 'if' statements:
-```
+```c
 if (<condition>)
 	dothis;
 else
@@ -129,7 +129,7 @@ else
 
 If the condition isn't met, it'll do the action following the 'else'.
 We can also group several actions depending on a condition:
-```
+```c
 if (<condition>) {
 	dothis1;
 	dothis2;
@@ -147,7 +147,7 @@ condition is true (that is, in the first grouping using a return; , and end; or 
 
 Also, you can have multiple conditions nested or chained.
 
-```
+```c
 if (<condition 1>)
 	dothis;
 else if (<condition 2>) {

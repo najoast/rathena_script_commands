@@ -16,7 +16,7 @@ needed with 'callfunc'. A label is not callable in this manner from another
 script.
 
 Example 1: callsub for checking (if checks pass, return to script)
-```
+```c
 	callsub S_CheckFull, "guild_vs2",50;
 	switch( rand(4) ) {
 		case 0:	warp "guild_vs2",9,50;	end;
@@ -24,7 +24,7 @@ Example 1: callsub for checking (if checks pass, return to script)
 		case 2:	warp "guild_vs2",90,50;	end;
 		case 3:	warp "guild_vs2",49,9;	end;
 	}
-...
+	...
 
 S_CheckFull:
 	if (getmapusers(getarg(0)) >= getarg(1)) {
@@ -35,8 +35,8 @@ S_CheckFull:
 ```
 
 Example 2: callsub used repeatedly, with different arguments
-```
-// notice how the Zeny check/delete is reused, instead of copy-pasting for every warp
+```c
+	// notice how the Zeny check/delete is reused, instead of copy-pasting for every warp
 	switch(select("Abyss Lake:Amatsu Dungeon:Anthell:Ayothaya Dungeon:Beacon Island, Pharos") {
 		case 1:	callsub S_DunWarp,"hu_fild05",192,207;
 		case 2:	callsub S_DunWarp,"ama_in02",119,181;
@@ -46,12 +46,12 @@ Example 2: callsub used repeatedly, with different arguments
 		// etc
 	}
 
-...
+	...
 
 S_DunWarp:
-// getarg(0) = "map name"
-// getarg(1) = x
-// getarg(2) = y
+	// getarg(0) = "map name"
+	// getarg(1) = x
+	// getarg(2) = y
 	if (Zeny >= 100) {
 		Zeny -= 100;
 		warp getarg(0),getarg(1),getarg(2);

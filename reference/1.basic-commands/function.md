@@ -15,17 +15,17 @@ Note that the name may only contain alphanumeric characters and underscore.
 Usage:
 
 ```
-    1. Declare the function.
+1. Declare the function.
 	function <function name>;
-    2. Call the function anywhere within the script.
-       It can also return a value when used with parentheses.
+2. Call the function anywhere within the script.
+	It can also return a value when used with parentheses.
 	<function name>;
-    3. Define the function within the script.
+3. Define the function within the script.
 	<function name> {<code>}
 ```
 
 Example:
-```
+```c
 prontera,154,189,4	script	Item Seller	767,{
 	/* Function declaration */
 	function SF_Selling;
@@ -53,7 +53,7 @@ prontera,154,189,4	script	Item Seller	767,{
 ```
 
 Example with parameters and return value:
-```
+```c
 prontera,150,150,0	script	TestNPC	123,{
 	/* Function declaration */
 	function MyAdd;

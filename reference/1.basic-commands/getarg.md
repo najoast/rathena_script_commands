@@ -13,29 +13,29 @@ This is another thing that can let you use the same code more than once.
 Argument numbering starts with 0, i.e. the first argument you gave is number 0.
 If no such argument was given, a zero is returned.
 
-```
-	place,50,50,6%TAB%script%TAB%Woman1%TAB%115,{
-		mes "[Woman]";
-		mes "Let's see if you win...";
-		callfunc "funcNPC",2;
-		mes "Well done, you have won!";
-		close;
-	}
+```c
+place,50,50,6%TAB%script%TAB%Woman1%TAB%115,{
+	mes "[Woman]";
+	mes "Let's see if you win...";
+	callfunc "funcNPC",2;
+	mes "Well done, you have won!";
+	close;
+}
 
-	place,52,50,6%TAB%script%TAB%Woman2%TAB%115,{
-		mes "[Woman]";
-		mes "Let's see if you win...";
-		callfunc "funcNPC",5;
-		mes "Well done, you have won!";
-		close;
-	}
+place,52,50,6%TAB%script%TAB%Woman2%TAB%115,{
+	mes "[Woman]";
+	mes "Let's see if you win...";
+	callfunc "funcNPC",5;
+	mes "Well done, you have won!";
+	close;
+}
 
-	function%TAB%script%TAB%funcNPC%TAB%{
-		.@win = rand(getarg(0));
-		if (.@win == 0) return;
-		mes "Sorry, you lost.";
-		close;
-	}
+function%TAB%script%TAB%funcNPC%TAB%{
+	.@win = rand(getarg(0));
+	if (.@win == 0) return;
+	mes "Sorry, you lost.";
+	close;
+}
 ```
 
 "woman1" NPC object calls the funcNPC. The argument it gives in this call is
@@ -46,8 +46,8 @@ calling the function, so the random number could be 0, 1, 2, 3 or 4, this makes
 
 You can pass multiple arguments in a function call:
 
-```
-	callfunc "funcNPC",5,4,3;
+```c
+callfunc "funcNPC",5,4,3;
 ```
 
 getarg(0) would be 5, getarg(1) would be 4 and getarg(2) would be 3.

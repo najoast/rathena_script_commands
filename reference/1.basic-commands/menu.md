@@ -16,7 +16,7 @@ Options can be grouped together, separated by the character ':'.
 menu "A:B",L_Wrong,"C",L_Right;
 ```
 
-It also sets a special temporary character variable @menu, which contains the
+It also sets a special temporary character variable `@menu`, which contains the
 number of option the player picked. (Numbering of options starts at 1.)
 This number is consistent with empty options and grouped options.
 
@@ -36,7 +36,7 @@ L_Right:
 	// @menu == 5
 ```
 
-If a label is '-', the script execution will continue right after the menu
+If a label is `'-'`, the script execution will continue right after the menu
 command if that option is selected, this can be used to save you time, and
 optimize big scripts.
 
@@ -64,6 +64,7 @@ Create a temporary array of strings to contain your menu items, and populate it
 with the strings that should go into the menu at this execution, making sure not
 to leave any gaps. Normally, you do it with a loop and an extra counter, like
 this:
+
 ```c
 setarray .@possiblemenuitems$[0],<list of potential menu items>;
 .@j = 0; // That's the menu lines counter.
@@ -96,9 +97,9 @@ for( .@i = 0; .@i < getarraysize(.@possiblemenuitems$); .@i++ )
 }
 ```
 
-This will create you an array .@menulist$ which contains the text of all items
+This will create you an array `.@menulist$` which contains the text of all items
 that should actually go into the menu based on your condition, and an array
-.@menureference, which contains their numbers in the list of possible menu items.
+`.@menureference`, which contains their numbers in the list of possible menu items.
 (Remember, arrays start with 0.) There's less of them than the possible menu
 items you've defined, but the menu command can handle the empty lines - only if
 they are last in the list, and if it's made this way, they are. Now comes a
@@ -116,9 +117,9 @@ continues execution right after the menu command. (And it's a good thing it
 doesn't, cause you can only explicitly define labels to jump to, and how do you
 know which ones to define if you don't know beforehand which options will end up
 where in your menu?)
-But how do you figure out which option the user picked? Enter the @menu.
+But how do you figure out which option the user picked? Enter the `@menu`.
 
-@menu contains the number of option that the user selected from the list,
+`@menu` contains the number of option that the user selected from the list,
 starting with 1 for the first option. You know now which option the user picked
 and which number in your real list of possible menu items it translated to:
 
@@ -130,13 +131,13 @@ mes "You selected " + .@possiblemenuitems$[.@menureference[@menu-1]] + "!";
 @menu-1 is the array index for the list of actually used menu items that we
 made.
 
-.@menureference[@menu-1] is the number of the item in the array of possible menu
+`.@menureference[@menu-1]` is the number of the item in the array of possible menu
 items that we've saved just for this purpose.
 
-And .@possiblemenuitems$[.@menureference[@menu-1]] is the string that we used to
+And `.@possiblemenuitems$[.@menureference[@menu-1]]` is the string that we used to
 display the menu line the user picked. (Yes, it's a handful, but it works.)
 
-You can set up a bunch of 'if (.@menureference[@menu-1] == X) goto Y' statements to
+You can set up a bunch of `if (.@menureference[@menu-1] == X) goto Y` statements to
 route your execution based on the line selected and still generate a different
 menu every time, which is handy when you want to, for example, make users select
 items in any specific order before proceeding, or make a randomly shuffled menu.

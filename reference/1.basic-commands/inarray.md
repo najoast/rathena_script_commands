@@ -6,7 +6,7 @@
 This command returns the index of the first matching value found in the array.
 It will return -1 if the value is not found.
 
-```
+```c
 setarray .@array[0], 100, 200, 300, 400, 500, 600, 100;
 
 inarray(.@array[0], 200);

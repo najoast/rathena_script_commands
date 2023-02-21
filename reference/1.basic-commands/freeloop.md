@@ -12,20 +12,20 @@ The command will return the state of freeloop for the attached script, even if n
 argument is provided.
 
 Example:
-```
-	freeloop(1); // enable script to loop freely
+```c
+freeloop(1); // enable script to loop freely
 
-	// be careful with what you do here
-	for ( .@i = 0; .@i < .@bigloop; .@i++ ) {
-		dothis;
-		// will sleep the script for 1ms when detect an infinity loop to
-		// let rAthena do what it needs to do (socket, timer, process, etc.)
-	}
+// be careful with what you do here
+for ( .@i = 0; .@i < .@bigloop; .@i++ ) {
+	dothis;
+	// will sleep the script for 1ms when detect an infinity loop to
+	// let rAthena do what it needs to do (socket, timer, process, etc.)
+}
 
-	freeloop(0); // disable freeloop
+freeloop(0); // disable freeloop
 
-	for ( .@i = 0; .@i < .@bigloop; .@i++ ) {
-		dothis;
-		// throw an infinity loop error
-	}
+for ( .@i = 0; .@i < .@bigloop; .@i++ ) {
+	dothis;
+	// throw an infinity loop error
+}
 ```

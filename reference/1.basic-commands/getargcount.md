@@ -8,7 +8,7 @@ call you can specify arguments. This function will return the number of argument
 provided.
 
 Example:
-```
+```c
 	callfunc "funcNPC",5,4,3;
 	...
 	function%TAB%script%TAB%funcNPC%TAB%{

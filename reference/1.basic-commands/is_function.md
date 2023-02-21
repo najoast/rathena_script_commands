@@ -8,7 +8,7 @@ This command checks whether a function exists.
 It returns 1 if function is found, or 0 if it isn't.
 
 Example:
-```
+```c
 function	script	try	{
 	dothat;
 }

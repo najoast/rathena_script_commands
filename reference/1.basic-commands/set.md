@@ -1,6 +1,8 @@
 ### set
+```
 *set <variable>,<expression>{,<char_id>};
 *set(<variable>,<expression>{,<char id>})
+```
 
 This command will set a variable to the value that the expression results in.
 Variables may either be set through this command or directly, much like any

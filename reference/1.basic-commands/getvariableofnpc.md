@@ -8,7 +8,7 @@ This can only be used to get . variables.
 
 Examples:
 
-```
+```c
 //This will return the value of .var, note that this can't be used, since the value isn't caught.
 getvariableofnpc(.var,"TargetNPC");
 

@@ -21,5 +21,5 @@ on all official maps. If you're using custom maps, beware.
 
 There are also three special 'map names' you can use.
 
-"Random" will warp the player randomly on the current map.
-"Save" and "SavePoint" will warp the player back to their save point.
+* "Random" will warp the player randomly on the current map.
+* "Save" and "SavePoint" will warp the player back to their save point.

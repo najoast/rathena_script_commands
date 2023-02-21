@@ -14,14 +14,14 @@ update statement is executed (this usually involves incrementing a variable).
 Then the condition is reevaluated and the cycle continues.
 
 Example 1:
-```
-	for( .@i = 1; .@i <= 5; .@i++ )
-		mes "This line will print 5 times.";
+```c
+for( .@i = 1; .@i <= 5; .@i++ )
+	mes "This line will print 5 times.";
 ```
 
 Example 2:
-```
-	mes "This will print the numbers 1 - 5.";
-	for( .@i = 1; .@i <= 5; .@i++ )
-		mes "Number: " + .@i;
+```c
+mes "This will print the numbers 1 - 5.";
+for( .@i = 1; .@i <= 5; .@i++ )
+	mes "Number: " + .@i;
 ```
