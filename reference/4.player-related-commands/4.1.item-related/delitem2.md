@@ -10,6 +10,6 @@ This command will remove a specified amount of items from the invoking/target ch
 See 'getitem2' for an explanation of the expanded parameters.
 
 'delitem3' is advance version of 'delitem2' that also use Item Random Option as criteria.
-* `<RandomIDArray>`    : Array variable of ID for item random option, see db/[pre-]re/item_randomopt_db.txt
+* `<RandomIDArray>`    : Array variable of ID for item random option, see `db/[pre-]re/item_randomopt_db.txt`
 * `<RandomValueArray>` : Array variable of item random option's value.
 * `<RandomParamArray>` : Array variable of item random option's param.

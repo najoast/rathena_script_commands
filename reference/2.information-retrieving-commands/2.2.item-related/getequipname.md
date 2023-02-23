@@ -1,5 +1,5 @@
 ### getequipname
-```c
+```
 *getequipname(<equipment slot>{,<char_id>})
 ```
 

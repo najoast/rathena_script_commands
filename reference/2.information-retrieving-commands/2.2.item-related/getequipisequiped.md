@@ -1,5 +1,5 @@
 ### getequipisequiped
-```c
+```
 *getequipisequiped(<equipment slot>{,<char_id>})
 ```
 

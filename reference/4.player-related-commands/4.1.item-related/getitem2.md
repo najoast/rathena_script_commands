@@ -88,10 +88,10 @@ getitem2 1216,1,1,2,0,.@card1,.@card2,.@card3,.@card4;
 
 Experiment with the number of star crumbs - I'm not certain just how much will
 work most and what it depends on. The valid element numbers are:
-
-```
- 1 - Ice, 2 - Earth 3 - Fire 4 - Wind.
-```
+* 1 - Ice
+* 2 - Earth
+* 3 - Fire
+* 4 - Wind.
 
 You can, apparently, even create duplicates of the same pet egg with this
 command, creating a pet which is the same, but simultaneously exists in two
@@ -99,7 +99,7 @@ eggs, and may hatch from either, although, I'm not sure what kind of a mess will
 this really cause.
 
 'getitem3' is advance version of 'getitem2' that also use Item Random Option as additional values.
-* `<RandomIDArray>`    : Array variable of ID for item random option, see db/[pre-]re/item_randomopt_db.txt
+* `<RandomIDArray>`    : Array variable of ID for item random option, see `db/[pre-]re/item_randomopt_db.txt`
 * `<RandomValueArray>` : Array variable of item random option's value.
 * `<RandomParamArray>` : Array variable of item random option's param.
 

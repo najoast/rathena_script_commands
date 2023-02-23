@@ -8,12 +8,10 @@ it gives you the information whether the player uses autotrade or not.
 Name is optional, and defaults to the attached player if omitted.
 
 The returned value is bitmask of.
-```
-  0 = doesn't have a vending or buyingstore (which also means he can't use autotrade)
-  1 = normal vending
-  2 = using @autotrade
-  4 = has a buyingstore
-```
+* 0 = doesn't have a vending or buyingstore (which also means he can't use autotrade)
+* 1 = normal vending
+* 2 = using @autotrade
+* 4 = has a buyingstore
 
 Examples:
 ```c

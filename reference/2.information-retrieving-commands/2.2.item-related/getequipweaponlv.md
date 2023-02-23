@@ -16,27 +16,27 @@ according to the database, 0 will be returned.
 
 Examples:
 ```c
-    // Right hand can only contain a weapon.
-    switch (getequipweaponlv(EQI_HAND_R)) {
-      case 1: mes "You are holding a lvl 1 weapon."; break;
-      case 2: mes "You are holding a lvl 2 weapon."; break;
-      case 3: mes "You are holding a lvl 3 weapon."; break;
-      case 4: mes "You are holding a lvl 4 weapon."; break;
-      case 5: mes "You are holding a lvl 5 weapon, hm, must be a custom design..."; break;
-      default: mes "Seems you don't have a weapon on."; break;
-    }
+// Right hand can only contain a weapon.
+switch (getequipweaponlv(EQI_HAND_R)) {
+    case 1: mes "You are holding a lvl 1 weapon."; break;
+    case 2: mes "You are holding a lvl 2 weapon."; break;
+    case 3: mes "You are holding a lvl 3 weapon."; break;
+    case 4: mes "You are holding a lvl 4 weapon."; break;
+    case 5: mes "You are holding a lvl 5 weapon, hm, must be a custom design..."; break;
+    default: mes "Seems you don't have a weapon on."; break;
+}
 
-    // Left hand can hold either a weapon or shield.
-    if (getequipid(EQI_HAND_R) == 0) {
-        mes "Seems you have nothing equipped here.";
-        close;
-    }
-    switch (getequipweaponlv(EQI_HAND_L)) {
-      case 0: mes "You are holding a shield, so it doesn't have a level."; break;
-      case 1: mes "You are holding a lvl 1 weapon."; break;
-      case 2: mes "You are holding a lvl 2 weapon."; break;
-      case 3: mes "You are holding a lvl 3 weapon."; break;
-      case 4: mes "You are holding a lvl 4 weapon."; break;
-      case 5: mes "You are holding a lvl 5 weapon, hm, must be a custom design..."; break;
-    }
+// Left hand can hold either a weapon or shield.
+if (getequipid(EQI_HAND_R) == 0) {
+    mes "Seems you have nothing equipped here.";
+    close;
+}
+switch (getequipweaponlv(EQI_HAND_L)) {
+    case 0: mes "You are holding a shield, so it doesn't have a level."; break;
+    case 1: mes "You are holding a lvl 1 weapon."; break;
+    case 2: mes "You are holding a lvl 2 weapon."; break;
+    case 3: mes "You are holding a lvl 3 weapon."; break;
+    case 4: mes "You are holding a lvl 4 weapon."; break;
+    case 5: mes "You are holding a lvl 5 weapon, hm, must be a custom design..."; break;
+}
 ```

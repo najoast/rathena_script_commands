@@ -13,6 +13,6 @@ other parameters that the invoking character has in the inventory.
 See 'getitem2' for an explanation of the expanded parameters.
 
 'countitem3' is advance version of 'countitem2' that also use Item Random Option as criteria.
-* `<RandomIDArray>`    : Array variable of ID for item random option, see db/[pre-]re/item_randomopt_db.txt
+* `<RandomIDArray>`    : Array variable of ID for item random option, see `db/[pre-]re/item_randomopt_db.txt`
 * `<RandomValueArray>` : Array variable of item random option's value.
 * `<RandomParamArray>` : Array variable of item random option's param.

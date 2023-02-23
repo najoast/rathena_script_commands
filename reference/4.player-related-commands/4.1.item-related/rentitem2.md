@@ -12,7 +12,7 @@ in `<time>` seconds and be automatically deleted. See 'rentitem' for further det
 See 'getitem2' for an explanation of the expanded parameters.
 
 'rentitem3' is advance version of 'rentitem2' that also use Item Random Option as additional values.
-* `<RandomIDArray>`    : Array variable of ID for item random option, see db/[pre-]re/item_randomopt_db.txt
+* `<RandomIDArray>`    : Array variable of ID for item random option, see `db/[pre-]re/item_randomopt_db.txt`
 * `<RandomValueArray>` : Array variable of item random option's value.
 * `<RandomParamArray>` : Array variable of item random option's param.
 

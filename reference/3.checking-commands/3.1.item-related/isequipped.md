@@ -12,9 +12,11 @@ If even one of the items given is not equipped, 0 will be returned.
 
 ```c
 // (Poring,Santa Poring,Poporing,Marin)
-if (isequipped(4001,4005,4033,4196)) mes "Wow! You're wearing a full complement of possible poring cards!";
+if (isequipped(4001,4005,4033,4196))
+    mes "Wow! You're wearing a full complement of possible poring cards!";
 // (Poring)
-if (isequipped(4001)) mes "A poring card is useful, don't you think?";
+if (isequipped(4001))
+    mes "A poring card is useful, don't you think?";
 ```
 
 The function was meant for item scripts to support the cards released by Gravity

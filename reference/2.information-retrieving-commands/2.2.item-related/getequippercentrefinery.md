@@ -19,5 +19,6 @@ random change of a refine succeeding or failing and then going through with it
 ```c
 // This will find a random number from 0 - 99 and if that is equal to or more
 // than the value recovered by this command it will go to L_Fail
-if (getequippercentrefinery(EQI_HAND_L)<=rand(100)) goto L_Fail;
+if (getequippercentrefinery(EQI_HAND_L)<=rand(100))
+    goto L_Fail;
 ```

@@ -13,18 +13,16 @@ the required incredients to cook a dish.
 
 Valid dish levels are:
 
-```
-11 - Level 1 Dish
-12 - Level 2 Dish
-13 - Level 3 Dish
-14 - Level 4 Dish
-15 - Level 5 Dish
-16 - Level 6 Dish
-17 - Level 7 Dish
-18 - Level 8 Dish
-19 - Level 9 Dish
-20 - Level 10 Dish
-```
+* 11 - Level 1 Dish
+* 12 - Level 2 Dish
+* 13 - Level 3 Dish
+* 14 - Level 4 Dish
+* 15 - Level 5 Dish
+* 16 - Level 6 Dish
+* 17 - Level 7 Dish
+* 18 - Level 8 Dish
+* 19 - Level 9 Dish
+* 20 - Level 10 Dish
 
 Although it's required to set a dish level, it doesn't matter if you set it to 1
 and you want to cook a level 10 dish, as long as you got the required incredients

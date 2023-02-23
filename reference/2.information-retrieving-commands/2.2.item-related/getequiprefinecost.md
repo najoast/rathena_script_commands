@@ -3,8 +3,8 @@
 *getequiprefinecost(<equipment slot>,<type>,<information>{,<char id>})
 ```
 
-This function returns refine cost for equipment in <equipment slot> based on
-passed arguments <type> and <information>.
+This function returns refine cost for equipment in `<equipment slot>` based on
+passed arguments `<type>` and `<information>`.
 
 Valid cost types are:
 ```
@@ -17,7 +17,7 @@ REFINE_COST_HOLINK     - For refining at Holink in Malangdo
 REFINE_COST_WAGJAK     - For refining at Refining Machine Wagjak in the Novice Academy
 ```
 
-This function will return required cost for refining based on <information> argument.
+This function will return required cost for refining based on `<information>` argument.
 
 Valid information types are:
 

@@ -12,7 +12,7 @@ further details.
 See 'getitem2' for an explanation of the expanded parameters.
 
 'makeitem3' is advance version of 'makeitem2' that also use Item Random Option as additional values.
-* `<RandomIDArray>`    : Array variable of ID for item random option, see db/[pre-]re/item_randomopt_db.txt
+* `<RandomIDArray>`    : Array variable of ID for item random option, see `db/[pre-]re/item_randomopt_db.txt`
 * `<RandomValueArray>` : Array variable of item random option's value.
 * `<RandomParamArray>` : Array variable of item random option's param.
 

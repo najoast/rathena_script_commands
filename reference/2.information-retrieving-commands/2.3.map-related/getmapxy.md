@@ -10,12 +10,12 @@ not variables or the search was not successful.
 
 Type is the type of object to search for:
 ```
-	BL_PC   - Character object (default)
-	BL_NPC  - NPC object
-	BL_PET  - Pet object
-	BL_HOM  - Homunculus object
-	BL_MER  - Mercenary object
-	BL_ELEM - Elemental object
+BL_PC   - Character object (default)
+BL_NPC  - NPC object
+BL_PET  - Pet object
+BL_HOM  - Homunculus object
+BL_MER  - Mercenary object
+BL_ELEM - Elemental object
 ```
 
 The search value is optional. If it is not specified, the location of the
@@ -31,21 +31,21 @@ search value, it will NOT locate the object by name.
 
 Example:
 ```c
-    prontera,164,301,3%TAB%script%TAB%Meh%TAB%730,{
-        mes "My name is Meh. I'm here so that Nyah can find me.";
-        close;
-    }
+prontera,164,301,3%TAB%script%TAB%Meh%TAB%730,{
+    mes "My name is Meh. I'm here so that Nyah can find me.";
+    close;
+}
 
-    prontera,164,299,3%TAB%script%TAB%Nyah%TAB%730,{
-        mes "My name is Nyah.";
-        mes "I will now search for Meh all across the world!";
-        if (getmapxy(.@mapname$, .@mapx, .@mapy, BL_NPC, "Meh") != 0) {
-                mes "I can't seem to find Meh anywhere!";
-                close;
-        }
-        mes "And I found him on map " + .@mapname$ + " at X:" + .@mapx + " Y:" + .@mapy + " !";
-        close;
-   }
+prontera,164,299,3%TAB%script%TAB%Nyah%TAB%730,{
+    mes "My name is Nyah.";
+    mes "I will now search for Meh all across the world!";
+    if (getmapxy(.@mapname$, .@mapx, .@mapy, BL_NPC, "Meh") != 0) {
+            mes "I can't seem to find Meh anywhere!";
+            close;
+    }
+    mes "And I found him on map " + .@mapname$ + " at X:" + .@mapx + " Y:" + .@mapy + " !";
+    close;
+}
 ```
 
 Notice that NPC objects disabled with 'disablenpc' will still be located.

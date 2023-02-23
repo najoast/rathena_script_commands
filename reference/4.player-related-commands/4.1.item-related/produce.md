@@ -17,11 +17,9 @@ associated with the item level. If there is no skill id, the success rate will b
 
 Valid item levels are:
 
-```
- 1   - Level 1 Weapons
- 2   - Level 2 Weapons
- 3   - Level 3 Weapons
- 21  - Blacksmith's Stones and Metals
- 22  - Alchemist's Potions, Holy Water, Assassin Cross's Deadly Poison
- 23  - Elemental Converters
-```
+* 1   - Level 1 Weapons
+* 2   - Level 2 Weapons
+* 3   - Level 3 Weapons
+* 21  - Blacksmith's Stones and Metals
+* 22  - Alchemist's Potions, Holy Water, Assassin Cross's Deadly Poison
+* 23  - Elemental Converters
